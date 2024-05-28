@@ -1,5 +1,5 @@
-import { Navbar } from "./components/Navbar"
-
+import { Navbar } from "./components/Navbar.jsx"
+import { SearchBar } from "./components/SearchBar.jsx"
 
 function App() {
   
@@ -7,6 +7,9 @@ function App() {
   return (
     <>
       <Navbar/>
+      <h1>Character searcher</h1>
+        <SearchBar />
+        <h3>Character</h3>
     </>
   )
 }
