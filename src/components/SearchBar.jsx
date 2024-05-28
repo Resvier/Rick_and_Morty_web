@@ -1,6 +1,6 @@
 import searchIcon from '../assets/search-icon.svg'
 
-export function SearchBar (onChange, onKeyDown) {
+export function SearchBar ({ handleChange, handleKeyDown }) {
   return (
     <div className='search-container'>
       <textarea
@@ -8,8 +8,8 @@ export function SearchBar (onChange, onKeyDown) {
         placeholder='Search'
         rows='1'
         maxLength='20'
-        onChange={onChange}
-        onKeyDown={onKeyDown}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
       />
       <img
         className='search-icon'
