@@ -3,10 +3,10 @@ export function Navbar () {
     <header>
       <nav className='navbar'>
         <span className='page-name'>
-          Rick and Morty info
+          Rick and Morty Characters
         </span>
         <ul className='navbar-list'>
-          <li>Characters</li>
+          <li>Name</li>
           <li>Locations</li>
           <li>Episode</li>
         </ul>

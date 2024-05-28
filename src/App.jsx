@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Navbar } from './components/Navbar.jsx'
 import { SearchBar } from './components/SearchBar.jsx'
 import { CharacterCard } from './components/CharacterCard.jsx'
+import { Footer } from './components/Footer.jsx'
 
 const URL_CHARACTERS = 'https://rickandmortyapi.com/api/character/'
 /* const URL_LOCATIONS = 'https://rickandmortyapi.com/api/location'
@@ -41,10 +42,13 @@ function App () {
   return (
     <>
       <Navbar />
-      <h1>Character searcher</h1>
-      <SearchBar handleChange={handleChange} handleKeyDown={handleKeyDown} />
-      <h3>Character</h3>
-      {search && <CharacterCard character={character} />}
+      <main>
+        <h1>Character searcher</h1>
+        <SearchBar handleChange={handleChange} handleKeyDown={handleKeyDown} />
+        <h3>Character</h3>
+        {search && <CharacterCard character={character} />}
+      </main>
+      <Footer />
     </>
   )
 }
