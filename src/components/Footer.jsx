@@ -1,13 +1,13 @@
-export function Footer () {
+export default function Footer () {
   const date = new Date()
   return (
-    <div className='footer-container'>
+    <footer>
       <a
         className='profile-link'
         href='https://github.com/Resvier'
       >
         © {date.getFullYear()} Francisco Javier Torres
       </a>
-    </div>
+    </footer>
   )
 }

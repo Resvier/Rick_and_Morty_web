@@ -1,4 +1,4 @@
-export function CharacterCard ({ character }) {
+export function CharacterCard (character) {
   return (
     <section className='character-container'>
 
