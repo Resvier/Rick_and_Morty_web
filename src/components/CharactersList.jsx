@@ -1,6 +1,7 @@
 import CharacterCard from './CharacterCard'
 export default function CharactersList (props) {
-  const characters = props.name
+  const number = 1
+  const characters = props.characters
   const charactersList = characters.map(character =>
     <CharacterCard
       key={character.id}
@@ -14,8 +15,15 @@ export default function CharactersList (props) {
     />
   )
   return (
-    <div className='characters-list'>
-      {charactersList}
-    </div>
+    <section className='characters-section'>
+      <div className='characters-list'>
+        {charactersList}
+      </div>
+      <div>
+        <button>Prev</button>
+        <span>{number}</span>
+        <button>Next</button>
+      </div>
+    </section>
   )
 }

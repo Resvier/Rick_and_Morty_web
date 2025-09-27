@@ -10,7 +10,7 @@ export const rick = [{
   },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }, {
-  id: 1,
+  id: 2,
   name: 'Rick Sanchez',
   status: 'Alive',
   species: 'Human',
@@ -21,7 +21,7 @@ export const rick = [{
   },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }, {
-  id: 1,
+  id: 3,
   name: 'Rick Sanchez',
   status: 'Alive',
   species: 'Human',
@@ -32,7 +32,7 @@ export const rick = [{
   },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }, {
-  id: 1,
+  id: 4,
   name: 'Rick Sanchez',
   status: 'Alive',
   species: 'Human',
@@ -43,7 +43,7 @@ export const rick = [{
   },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }, {
-  id: 1,
+  id: 5,
   name: 'Rick Sanchez',
   status: 'Alive',
   species: 'Human',
@@ -54,7 +54,7 @@ export const rick = [{
   },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }, {
-  id: 1,
+  id: 6,
   name: 'Rick Sanchez',
   status: 'Alive',
   species: 'Human',
