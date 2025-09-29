@@ -1,6 +1,5 @@
 import CharacterCard from './CharacterCard'
 export default function CharactersList (props) {
-  const number = 1
   const characters = props.characters
   const charactersList = characters.map(character =>
     <CharacterCard
@@ -19,10 +18,16 @@ export default function CharactersList (props) {
       <div className='characters-list'>
         {charactersList}
       </div>
-      <div>
-        <button>Prev</button>
-        <span>{number}</span>
-        <button>Next</button>
+      <div className='page-buttons'>
+        <button
+          onClick={props.handlePrev}
+        >Prev
+        </button>
+        <span>{props.page}</span>
+        <button
+          onClick={props.handleNext}
+        >Next
+        </button>
       </div>
     </section>
   )

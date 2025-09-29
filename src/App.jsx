@@ -3,7 +3,6 @@ import SearchBar from './components/SearchBar.jsx'
 import Footer from './components/Footer.jsx'
 import CharactersList from './components/CharactersList.jsx'
 import { useEffect, useState } from 'react'
-import { rick } from './rick.js'
 
 /*
 
@@ -15,19 +14,43 @@ const URL_CHARACTERS = 'https://rickandmortyapi.com/api/character/?name='
 export default function App () {
   const [name, setName] = useState('')
   const [characters, setCharacters] = useState([])
+  const [prev, setPrev] = useState(null)
+  const [next, setNext] = useState(null)
+  const [page, setPage] = useState(1)
+  const [url, setUrl] = useState(URL_CHARACTERS)
 
   function handleSubmit (event) {
     event.preventDefault() // Previene la recarga de la página
     const formData = new FormData(event.target)
     const newCharacter = formData.get('character')
     setName(newCharacter)
-    console.log(newCharacter)
   }
+  function handlePrev (event) {
+    setPage(prevPage => prevPage !== 1 ? prevPage - 1 : prevPage)
+    setUrl(prevUrl => prev !== null ? prev : prevUrl)
+  }
+  function handleNext (event) {
+    setPage(prevPage => next === null ? prevPage : prevPage + 1)
+    setUrl(prevUrl => next === null ? prevUrl : next)
+  }
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setCharacters(data.results)
+        setNext(data.info.next)
+        setPrev(data.info.prev)
+      })
+  }, [url])
   useEffect(() => {
     fetch(URL_CHARACTERS + name)
       .then(res => res.json())
-      .then(data => setCharacters(data.results))
-    console.log(characters)
+      .then(data => {
+        setCharacters(data.results)
+        setNext(data.info.next)
+        setPrev(data.info.prev)
+      })
+    setPage(1)
   }
   , [name])
   return (
@@ -39,6 +62,9 @@ export default function App () {
         />
         <CharactersList
           characters={characters}
+          page={page}
+          handleNext={handleNext}
+          handlePrev={handlePrev}
         />
       </main>
       <Footer />

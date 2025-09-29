@@ -40,7 +40,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: auto;
   flex: 1;
   padding: 2rem 0;
   background-color: #000823;
@@ -72,22 +72,22 @@ main h2 {
   padding: 1rem;
   width: 100%;
   gap: 5px;
+  height: 100%;
 }
 
 .search-bar input {
   width: 350px;
-  height: 100%;
   border-radius: 10px;
   border: none;
   font-weight: 500;
   padding: 0 0 0 10px;
-}
-
-.search-bar input {
   outline: none;
 }
 
+
 .search-bar button {
+  font-weight: 500;
+  font-size: 1rem;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px 20px;
@@ -102,10 +102,27 @@ main h2 {
   box-shadow: 1.5px 1.5px 2px #03ce5b74;
 }
 
+main.characters-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.characters-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, auto);
+  row-gap: 50px;
+  column-gap: 50px;
+  max-width: 85%;
+  justify-self: center;
+}
+
 .character-container {
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 550;
   gap: 1rem;
   border: 2px solid #000;
   border-radius: 30px;
@@ -136,31 +153,61 @@ main h2 {
 .character-container h3,
 h4 {
   margin: 0;
+  font-size: 0.9rem;
+}
+
+.character-info-container {
+  padding: 10px 15px 10px 5px;
 }
 
 .character-info-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 0.85rem;
 }
 
 .character-image-container {
   border: none;
-  height: 200px;
+  height: 100%;
 }
 
 .character-image {
   width: 200px;
   height: auto;
-  border-radius: 30px 0 0 30px;
+  border-radius: 25px 0 0 25px;
 }
 
+.page-buttons {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-top: 2rem;
+}
 
-.characters-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto, auto);
-  gap: 50px;
+.page-buttons>button {
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  height: 100%;
+  cursor: pointer;
+  background-color: #03ce5a;
+}
+
+.page-buttons>span {
+  background-color: #acd266;
+  margin-inline: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+
 }
 
 
