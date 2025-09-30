@@ -19,15 +19,17 @@ export default function CharactersList (props) {
         {charactersList}
       </div>
       <div className='page-buttons'>
-        <button
-          onClick={props.handlePrev}
-        >Prev
-        </button>
+        {props.page !== 1 &&
+          <button
+            onClick={props.handlePrev}
+          >Prev
+          </button>}
         <span>{props.page}</span>
-        <button
-          onClick={props.handleNext}
-        >Next
-        </button>
+        {props.next !== null &&
+          <button
+            onClick={props.handleNext}
+          >Next
+          </button>}
       </div>
     </section>
   )

@@ -2,7 +2,7 @@ import Header from './components/Header.jsx'
 import SearchBar from './components/SearchBar.jsx'
 import Footer from './components/Footer.jsx'
 import CharactersList from './components/CharactersList.jsx'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 /*
 
@@ -18,6 +18,7 @@ export default function App () {
   const [next, setNext] = useState(null)
   const [page, setPage] = useState(1)
   const [url, setUrl] = useState(URL_CHARACTERS)
+  const charactersList = useRef(null)
 
   function handleSubmit (event) {
     event.preventDefault() // Previene la recarga de la página
@@ -33,6 +34,11 @@ export default function App () {
     setPage(prevPage => next === null ? prevPage : prevPage + 1)
     setUrl(prevUrl => next === null ? prevUrl : next)
   }
+  useEffect(() => {
+    if (charactersList.current) {
+      charactersList.current.scrollIntoView()
+    }
+  }, [page])
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -56,7 +62,7 @@ export default function App () {
   return (
     <>
       <Header />
-      <main>
+      <main ref={charactersList}>
         <SearchBar
           handleSubmit={handleSubmit}
         />
@@ -65,6 +71,7 @@ export default function App () {
           page={page}
           handleNext={handleNext}
           handlePrev={handlePrev}
+          next={next}
         />
       </main>
       <Footer />
