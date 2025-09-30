@@ -14,18 +14,31 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-
+  box-shadow: 0 2px 2px rgba(0, 218, 243, 0.459)
 }
 
 .navbar {
   display: flex;
-  background: #03ce5a;
+  background: #024784;
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
 }
 
-.page-name {
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+
+
+.page-section {
   font-size: 1.3rem;
   font-weight: bold;
 }
@@ -43,8 +56,9 @@ main {
   align-items: center;
   height: auto;
   flex: 1;
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
   background-color: #000823;
+  min-height: 100vh;
 }
 
 main h2 {
@@ -107,7 +121,17 @@ main.characters-section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+.characters-section {
+  background-image: url(/src/assets/bg-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  max-width: 85%;
 }
 
 .characters-list {
@@ -116,20 +140,20 @@ main.characters-section {
   grid-template-rows: repeat(auto, auto);
   row-gap: 50px;
   column-gap: 50px;
-  max-width: 85%;
   justify-self: center;
+  transition: 0.7s ease-in-out;
 }
 
 .character-container {
   display: flex;
   align-items: center;
   max-width: 550;
+  max-height: fit-content;
   gap: 1rem;
-  border: 2px solid #000;
+  border: 2px solid #15ff009e;
   border-radius: 30px;
   background:
     linear-gradient(135deg, #03d903, #f5e963, #6ef96e, #f5e963, #6ef96e, #f5e963, #03d903);
-  min-width: 0;
   /* Permite que el contenido se ajuste */
 }
 
@@ -170,13 +194,13 @@ h4 {
 
 .character-image-container {
   border: none;
-  height: 100%;
+  height: 200px;
 }
 
 .character-image {
   width: 200px;
   height: auto;
-  border-radius: 25px 0 0 25px;
+  border-radius: 30px 0 0 30px;
 }
 
 .page-buttons {

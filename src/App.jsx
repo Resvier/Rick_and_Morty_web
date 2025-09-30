@@ -16,7 +16,7 @@ export default function App () {
   const [characters, setCharacters] = useState([])
   const [prev, setPrev] = useState(null)
   const [next, setNext] = useState(null)
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
   const [url, setUrl] = useState(URL_CHARACTERS)
   const charactersList = useRef(null)
 
@@ -40,23 +40,33 @@ export default function App () {
     }
   }, [page])
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setCharacters(data.results)
-        setNext(data.info.next)
-        setPrev(data.info.prev)
-      })
+    if (name !== '') {
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          setCharacters(data.results)
+          setNext(data.info.next)
+          setPrev(data.info.prev)
+        })
+    } else {
+      setCharacters([])
+      setPage(0)
+    }
   }, [url])
   useEffect(() => {
-    fetch(URL_CHARACTERS + name)
-      .then(res => res.json())
-      .then(data => {
-        setCharacters(data.results)
-        setNext(data.info.next)
-        setPrev(data.info.prev)
-      })
-    setPage(1)
+    if (name !== '') {
+      fetch(URL_CHARACTERS + name)
+        .then(res => res.json())
+        .then(data => {
+          setCharacters(data.results)
+          setNext(data.info.next)
+          setPrev(data.info.prev)
+        })
+      setPage(1)
+    } else {
+      setCharacters([])
+      setPage(0)
+    }
   }
   , [name])
   return (
