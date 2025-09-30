@@ -23,7 +23,8 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 2px rgba(0, 218, 243, 0.459)
+  box-shadow: 0 2px 2px rgba(0, 218, 243, 0.459);
+  z-index: 1000;
 }
 
 .navbar {
@@ -142,6 +143,7 @@ main.characters-section {
   min-height: inherit;
   max-width: 85%;
   border-radius: 30px 30px 0 0;
+
 }
 
 .not-found {
@@ -165,7 +167,7 @@ main.characters-section {
   row-gap: 50px;
   column-gap: 50px;
   justify-self: center;
-  transition: 0.7s ease-in-out;
+
 }
 
 .character-container {
@@ -178,7 +180,21 @@ main.characters-section {
   border-radius: 30px;
   background:
     linear-gradient(135deg, #03d903, #f5e963, #6ef96e, #f5e963, #6ef96e, #f5e963, #03d903);
-  /* Permite que el contenido se ajuste */
+  animation: cardAppear 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive para las cartas individuales */
