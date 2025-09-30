@@ -6,7 +6,7 @@ export default function Footer () {
         className='profile-link'
         href='https://github.com/Resvier'
       >
-        © {date.getFullYear()} Francisco Javier Torres
+        © {date.getFullYear()} Francisco Javier Torres Franco
       </a>
     </footer>
   )

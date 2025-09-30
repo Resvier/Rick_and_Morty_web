@@ -13,6 +13,7 @@ export default function CharacterCard (character) {
         <div className='character-info-list'>
           <div className='basic-info'>
             <span className='status-specie'>
+              {character.status === 'Alive' ? '🟢' : '🔴'}
               {character.status}
             </span>
             <span> - {character.species}</span>

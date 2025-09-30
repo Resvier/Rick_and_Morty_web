@@ -18,6 +18,7 @@ export default function App () {
   const [next, setNext] = useState(null)
   const [page, setPage] = useState(0)
   const [url, setUrl] = useState(URL_CHARACTERS)
+  const [found, setFound] = useState(true)
   const charactersList = useRef(null)
 
   function handleSubmit (event) {
@@ -55,14 +56,25 @@ export default function App () {
   }, [url])
   useEffect(() => {
     if (name !== '') {
+      console.log(name)
+      console.log(found)
       fetch(URL_CHARACTERS + name)
-        .then(res => res.json())
+        .then(res => {
+          if (res.ok) {
+            return res.json()
+          } else {
+            setFound(false)
+            setCharacters([])
+            setPage(0)
+          }
+        })
         .then(data => {
           setCharacters(data.results)
           setNext(data.info.next)
           setPrev(data.info.prev)
+          setPage(1)
+          setFound(true)
         })
-      setPage(1)
     } else {
       setCharacters([])
       setPage(0)
@@ -77,6 +89,7 @@ export default function App () {
           handleSubmit={handleSubmit}
         />
         <CharactersList
+          found={found}
           characters={characters}
           page={page}
           handleNext={handleNext}

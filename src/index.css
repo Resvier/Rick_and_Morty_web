@@ -8,6 +8,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
   scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 header {
@@ -132,6 +141,21 @@ main.characters-section {
   height: 100%;
   min-height: inherit;
   max-width: 85%;
+  border-radius: 30px 30px 0 0;
+}
+
+.not-found {
+  background-color: #ffffff;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  justify-self: center;
+  padding: 1rem;
+  width: 60%;
+  text-align: center;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
 }
 
 .characters-list {

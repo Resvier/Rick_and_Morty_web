@@ -4,12 +4,12 @@ export default function Header () {
   return (
     <header>
       <nav className='navbar'>
-        <div className='title'>
+        <h1 className='title'>
           <img src={RickAndMortyLogo} alt='Rick and Morty' className='logo' />
           <span className='page-section'>
             Characters
           </span>
-        </div>
+        </h1>
         <ul className='navbar-list'>
           <li>Name</li>
           <li>Locations</li>

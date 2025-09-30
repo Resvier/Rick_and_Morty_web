@@ -15,6 +15,10 @@ export default function CharactersList (props) {
   )
   return (
     <section className='characters-section'>
+      {!props.found &&
+        <div className='not-found'>
+          <span>Error: Character not found</span>
+        </div>}
       <div className='characters-list'>
         {charactersList}
       </div>
